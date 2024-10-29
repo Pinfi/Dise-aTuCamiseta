@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Crea tu camiseta</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+
+        <div class="editables" id="editables">
+            <div class="titulo" id="titulo">
+                <label for="tituloTexto">Titulo:</label>
+                <input type="text" id="tituloTexto" maxlength="10">
+            </div>
+            <fieldset class="barritas" id="barritas">
+                <legend>Posicion del titulo</legend>
+                <label for="horizontal">Horizontal:</label>
+                <input type="range" id="horizontal" max="40" value="0">
+                <label for="vertical">Vertical:</label>
+                <input type="range" id="vertical" max="65" value="0">
+            </fieldset>
+            <fieldset class="elegirColor" id="elegirColor">
+                <legend>Color de la camiseta</legend>
+                <input type="radio" name="colorCamiseta" id="colorCamisetaNegra" value="Negra" checked>Negra
+                <input type="radio" name="colorCamiseta" id="colorCamisetaBlanca" value="Blanca">Blanca
+            </fieldset>
+            <div class="ElegirDibujo" id="ElegirDibujo">
+                <img src="img/disenos/bowser.png" alt="bowser" draggable="true" id="bowser">
+                <img src="img/disenos/luigi.png" alt="luigi" draggable="true" id="luigi">
+                <img src="img/disenos/mario.png" alt="mario" draggable="true" id="mario">
+                <img src="img/disenos/peach.png" alt="peach" draggable="true" id="peach">
+                <img src="img/disenos/yoshi.png" alt="yoshi" draggable="true" id="yoshi">
+                <img src="img/disenos/toad.png" alt="toad" draggable="true" id="toad">
+
+            </div>
+        </div>
+
+
+        <div class="divCamisetaNegra" id="divCamiseta">
+            <div class="editableCamiseta" id="editableCamiseta">
+                <div class="parteSuperior" id="parteSuperior">
+                    <div class="camisetaTitulo" id="camisetaTitulo">
+                        <p class="texto" id="texto"></p>
+                    </div>
+                    <div class="camisetaDibujoEspejo" id="camisetaDibujoEspejo"></div>
+                </div>
+                <div class="parteInferior" id="parteInferior">
+                    <div class="camisetaDibujo" id="camisetaDibujo"></div>
+                    <div class="camisetaNombre" id="camisetaNombre"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 700px;
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.editables {
+    width: 230px;
+    gap: 10px;
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.titulo {
+}
+.barritas {
+}
+.elegirColor {
+}
+.ElegirDibujo {
+border: 1px solid red;
+height: 400px;
+}
+
+.divCamisetaBlanca {
+    border: 1px solid purple;
+    width: 450px;
+    display: flex;
+    background-position: center;
+    background-image: url(../img/camiseta/white.png);
+    background-color: rgb(98, 98, 98);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.divCamisetaNegra {
+    border: 1px solid purple;
+    width: 450px;
+    display: flex;
+    background-position: center;
+    background-image: url(../img/camiseta/black.png);
+    background-color: rgb(98, 98, 98);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.editableCamiseta{
+    border: 1px solid yellow;
+    width: 180px;
+    margin-top: 35px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.parteSuperior{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.parteInferior{
+    width: 100%;
+    height: 215px;
+
+}
+.texto{
+    margin: 0;
+    width: max-content;
+
+}
+.ElegirDibujo img{
+    max-width: 150px;
+    max-height: 120px;
+    border: 1px solid;
+}
+
+.camisetaTitulo {
+    width: 100px;
+    height: 85px;
+    border: 1px solid whitesmoke;
+    transform: translateX(0px);
+    transform: translateY(0px);
+
+}
+.camisetaDibujoEspejo {
+width: 50px;
+height: 100%;
+display: flex;
+flex-direction: column;
+border: 1px solid red;
+}
+.camisetaDibujo {
+    border: 1px solid greenyellow;
+    height: 85%;
+
+}
+.camisetaNombre {
+    border: 1px solid blue;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: fantasy;
+}
