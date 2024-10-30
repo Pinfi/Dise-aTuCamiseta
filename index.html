@@ -19,10 +19,14 @@
             </div>
             <fieldset class="barritas" id="barritas">
                 <legend>Posicion del titulo</legend>
-                <label for="horizontal">Horizontal:</label>
-                <input type="range" id="horizontal" max="40" value="0">
-                <label for="vertical">Vertical:</label>
-                <input type="range" id="vertical" max="65" value="0">
+                <div>
+                    <label for="horizontal">Horizontal:</label>
+                    <input type="range" id="horizontal" max="40" value="0">
+                </div>
+                <div>
+                    <label for="vertical">Vertical:</label>
+                    <input type="range" id="vertical" max="65" value="0">
+                </div>
             </fieldset>
             <fieldset class="elegirColor" id="elegirColor">
                 <legend>Color de la camiseta</legend>
@@ -30,12 +34,12 @@
                 <input type="radio" name="colorCamiseta" id="colorCamisetaBlanca" value="Blanca">Blanca
             </fieldset>
             <div class="ElegirDibujo" id="ElegirDibujo">
-                <img src="img/disenos/bowser.png" alt="bowser" draggable="true" id="bowser">
-                <img src="img/disenos/luigi.png" alt="luigi" draggable="true" id="luigi">
-                <img src="img/disenos/mario.png" alt="mario" draggable="true" id="mario">
-                <img src="img/disenos/peach.png" alt="peach" draggable="true" id="peach">
-                <img src="img/disenos/yoshi.png" alt="yoshi" draggable="true" id="yoshi">
-                <img src="img/disenos/toad.png" alt="toad" draggable="true" id="toad">
+                <img src="img/disenos/bowser.png" alt="Bowser" draggable="true" id="bowser">
+                <img src="img/disenos/luigi.png" alt="Luigi" draggable="true" id="luigi">
+                <img src="img/disenos/mario.png" alt="Mario" draggable="true" id="mario">
+                <img src="img/disenos/peach.png" alt="Peach" draggable="true" id="peach">
+                <img src="img/disenos/yoshi.png" alt="Yoshi" draggable="true" id="yoshi">
+                <img src="img/disenos/toad.png" alt="Toad" draggable="true" id="toad">
 
             </div>
         </div>
@@ -47,11 +51,17 @@
                     <div class="camisetaTitulo" id="camisetaTitulo">
                         <p class="texto" id="texto"></p>
                     </div>
-                    <div class="camisetaDibujoEspejo" id="camisetaDibujoEspejo"></div>
+                    <div class="camisetaDibujoEspejo" id="camisetaDibujoEspejo">
+                        <img src="img/disenos/bowser.png" alt="bowser" id="imagenEspejo" draggable="false">
+                    </div>
                 </div>
                 <div class="parteInferior" id="parteInferior">
-                    <div class="camisetaDibujo" id="camisetaDibujo"></div>
-                    <div class="camisetaNombre" id="camisetaNombre"></div>
+                    <div class="camisetaDibujo" id="camisetaDibujo">
+                        <img src="img/disenos/bowser.png" alt="bowser" id="imagenCamiseta" draggable="false">
+                    </div>
+                    <div class="camisetaNombre" id="camisetaNombre">
+                        <h4 id="nombreEstampado">Bowser</h4>
+                    </div>
                 </div>
 
             </div>

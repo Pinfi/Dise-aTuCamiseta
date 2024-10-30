@@ -1,6 +1,6 @@
 
 //Tomamos la camiseta entera
-let cuadroCamiseta = document. getElementById('divCamiseta');
+let cuadroCamiseta = document.getElementById('divCamiseta');
 
 //Selector Color de la camiseta
 let selectorColorCamisetaNegra = document.getElementById('colorCamisetaNegra');
@@ -19,29 +19,29 @@ let camisetaDibujo = document.getElementById('camisetaDibujo');
 
 
 //Evento que en el click cambia el color de la camiseta
-selectorColorCamisetaNegra.addEventListener('click',cambiarCamiseta);
-selectorColorCamisetaBlanca.addEventListener('click',cambiarCamiseta);
+selectorColorCamisetaNegra.addEventListener('click', cambiarCamiseta);
+selectorColorCamisetaBlanca.addEventListener('click', cambiarCamiseta);
 
 
 
 
 //Funcion que cambia la caiseta de fondo
-function cambiarCamiseta(event){
-    if (event.target.id=='colorCamisetaNegra') {
+function cambiarCamiseta(event) {
+    if (event.target.id == 'colorCamisetaNegra') {
         cuadroCamiseta.removeAttribute('class');
-        cuadroCamiseta.setAttribute('class','divCamisetaNegra');
-    }else{
+        cuadroCamiseta.setAttribute('class', 'divCamisetaNegra');
+    } else {
         cuadroCamiseta.removeAttribute('class');
-        cuadroCamiseta.setAttribute('class','divCamisetaBlanca');
+        cuadroCamiseta.setAttribute('class', 'divCamisetaBlanca');
     }
 }
 
 //Evento que escribe el titulo
-tituloCamiseta.oninput=ponerTitulo;
+tituloCamiseta.oninput = ponerTitulo;
 
 //Funcion que pone el titulo en la camiseta
 function ponerTitulo() {
-    texto.innerHTML=tituloCamiseta.value;
+    texto.innerHTML = tituloCamiseta.value;
 }
 
 //Evento que mueve el titulo
@@ -59,14 +59,23 @@ function moverTitulo() {
 
 
 
-camisetaDibujo.addEventListener('drop', (event)=>{
+let imagenCamiseta = document.getElementById('imagenCamiseta');
+let imagenEspejo = document.getElementById('imagenEspejo')
+let nombreEstampado = document.getElementById('nombreEstampado');
+camisetaDibujo.addEventListener('drop', (event) => {
     event.preventDefault();
-    let imagenNueva = document.createElement("img");
-    imagenNueva.src = event.dataTransfer.getData('text/plain');
-    event.target.appendChild(imagenNueva); 
-    
-    camisetaDibujo.setAttribute('class','bloque4');
-    
+
+    imagenCamiseta.src = event.dataTransfer.getData('text/plain');
+    imagenCamiseta.alt = event.dataTransfer.getData('alt');
+
+    imagenEspejo.src = event.dataTransfer.getData('text/plain');
+    imagenEspejo.alt = event.dataTransfer.getData('alt');
+
+    nombreEstampado.textContent = event.dataTransfer.getData('alt');
+});
+
+camisetaDibujo.addEventListener('dragover', (event) => {
+    event.preventDefault();
 });
 
 
@@ -78,30 +87,29 @@ let yoshi = document.getElementById('yoshi');
 let toad = document.getElementById('toad');
 
 
-bowser.addEventListener('dragstart',(event) =>{
+bowser.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
-    console.log(event.target.src)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
-luigi.addEventListener('dragstart',(event) =>{
+luigi.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
-mario.addEventListener('dragstart',(event) =>{
+mario.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
-peach.addEventListener('dragstart',(event) =>{
+peach.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
-yoshi.addEventListener('dragstart',(event) =>{
+yoshi.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
-toad.addEventListener('dragstart',(event) =>{
+toad.addEventListener('dragstart', (event) => {
     event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt',event.target.alt)
+    event.dataTransfer.setData('alt', event.target.alt)
 });
 
 
