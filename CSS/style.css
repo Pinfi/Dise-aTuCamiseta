@@ -40,7 +40,8 @@ body {
     flex-direction: column;
     width: 210px;
 }
-.barritas div{
+
+.barritas div {
     display: flex;
     justify-content: space-between;
 }
@@ -126,7 +127,7 @@ body {
 }
 
 @keyframes pulsacionEleccion {
-    50%{
+    50% {
         transform: scale(1.2);
     }
 
@@ -174,3 +175,38 @@ img {
 #nombreEstampado {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.cuadradoEstrella {
+    display: flex;
+    position: absolute;
+    left: 85%;
+    top: 60%;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/cajaMario.jpg);
+    background-size: cover;
+
+}
+
+.saltoCasilla {
+    display: flex;
+    position: absolute;
+    left: 85%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/cajaMario.jpg);
+    background-size: cover;
+}
+
+.moneda {
+    display: flex;
+    position: absolute;
+    left: 1325px;
+    top: 290px;
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/coin.png);
+}
+
+

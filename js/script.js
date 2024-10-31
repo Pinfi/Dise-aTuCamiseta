@@ -41,7 +41,12 @@ tituloCamiseta.oninput = ponerTitulo;
 
 //Funcion que pone el titulo en la camiseta
 function ponerTitulo() {
-    texto.innerHTML = tituloCamiseta.value;
+    let textoTitulo = tituloCamiseta.value;
+    if (textoTitulo.length > 10) {
+        alert('El titulo no puede tener mas de 10 caracteres')
+    } else {
+        texto.innerHTML = tituloCamiseta.value;
+    }
 }
 
 //Evento que mueve el titulo
@@ -58,10 +63,12 @@ function moverTitulo() {
 }
 
 
-
+//Tomamos los campos donde modificaremos la camiseta con el dibujo
 let imagenCamiseta = document.getElementById('imagenCamiseta');
 let imagenEspejo = document.getElementById('imagenEspejo')
 let nombreEstampado = document.getElementById('nombreEstampado');
+
+//Funcion que cambia la imagen central, la superior en modo espejo y ademas pone el nombre del personaje en la parte inferior
 camisetaDibujo.addEventListener('drop', (event) => {
     event.preventDefault();
 
@@ -74,48 +81,50 @@ camisetaDibujo.addEventListener('drop', (event) => {
     nombreEstampado.textContent = event.dataTransfer.getData('alt');
 });
 
+//Este metodo hace posible que podamos soltar el elemento en la zona (Si se quita no permite hacer el drop)
 camisetaDibujo.addEventListener('dragover', (event) => {
     event.preventDefault();
 });
 
+//Tomamos todos los elementos de la galeria que seran los arrastrables
+let elegirDibujo = document.getElementById('ElegirDibujo');
+let arrayImagen = elegirDibujo.querySelectorAll('img');
 
-let bowser = document.getElementById('bowser');
-let luigi = document.getElementById('luigi');
-let mario = document.getElementById('mario');
-let peach = document.getElementById('peach');
-let yoshi = document.getElementById('yoshi');
-let toad = document.getElementById('toad');
-
-
-bowser.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
-});
-luigi.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
-});
-mario.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
-});
-peach.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
-});
-yoshi.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
-});
-toad.addEventListener('dragstart', (event) => {
-    event.dataTransfer.setData('text/plain', event.target.src)
-    event.dataTransfer.setData('alt', event.target.alt)
+arrayImagen.forEach(img => {
+    img.addEventListener('dragstart', (event) => {
+        event.dataTransfer.setData('text/plain', event.target.src)
+        event.dataTransfer.setData('alt', event.target.alt)
+    });
 });
 
 
+//Tomamos el contenedor total y creamos dos elementos que seran la caja que se mueva y suene al pulsarla
+let container = document.getElementById('container');
+let casillaEstrella = document.createElement('div');
+let moneda = document.createElement('div');
 
+//Añadimos los elementos creados en el contenedor y le ponemos la clase que queramos
+casillaEstrella.setAttribute('class', 'cuadradoEstrella');
+casillaEstrella.setAttribute('draggable', 'false');
+container.append(casillaEstrella,moneda)
 
+//Evento que se ejecuta al pulsar en la caja con la interrogacion
+casillaEstrella.addEventListener('click',casillaSalto)
 
+//Creamos el sonido
+let sonido = new Audio('../mp3/mario-coin.mp3');
 
+//Funcion que mueve la caja y hace que suene
+function casillaSalto() {
+
+    casillaEstrella.setAttribute('class','saltoCasilla')
+    moneda.setAttribute('class','moneda');
+    setTimeout(() => {
+        casillaEstrella.setAttribute('class','cuadradoEstrella');
+        moneda.removeAttribute('class')
+    }, 200);
+
+    sonido.play();
+}
 
 
